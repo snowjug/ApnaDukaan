@@ -6,16 +6,19 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 via-cyan-50 to-teal-50 dark:from-gray-950 dark:via-emerald-950/30 dark:to-gray-950 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-rose-50 to-amber-100 dark:from-slate-950 dark:via-orange-950/30 dark:to-rose-950/20 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-400/30 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-        <div className="absolute top-40 right-20 w-72 h-72 bg-teal-400/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
-        <div className="absolute bottom-20 left-20 w-72 h-72 bg-cyan-400/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-orange-400/30 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
+        <div className="absolute top-40 right-20 w-72 h-72 bg-rose-400/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
+        <div className="absolute bottom-20 left-20 w-72 h-72 bg-amber-300/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
       </div>
 
       <div className="text-center space-y-8 p-8 max-w-4xl relative z-10">
-        <h1 className="text-7xl md:text-8xl font-extrabold bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
+        <div className="mx-auto w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-white/80 dark:bg-slate-900/70 backdrop-blur border border-orange-200/70 dark:border-orange-900/60 shadow-2xl flex items-center justify-center">
+          <img src="/apnadukaan-logo.svg" alt="ApnaDukaan Logo" className="w-16 h-16 md:w-20 md:h-20" />
+        </div>
+        <h1 className="text-7xl md:text-8xl font-extrabold bg-gradient-to-r from-orange-600 via-rose-600 to-amber-600 bg-clip-text text-transparent">
           ApnaDukaan
         </h1>
         <p className="text-3xl font-medium text-muted-foreground">
@@ -24,7 +27,7 @@ const Index = () => {
         <Button 
           onClick={() => navigate("/auth")} 
           size="lg" 
-          className="mt-8 text-lg px-8 py-6 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-xl hover:shadow-2xl transition-all duration-300"
+          className="mt-8 text-lg px-8 py-6 bg-gradient-to-r from-orange-600 to-rose-600 hover:from-orange-700 hover:to-rose-700 shadow-xl hover:shadow-2xl transition-all duration-300"
         >
           Get Started <ArrowRight className="ml-2 h-5 w-5" />
         </Button>

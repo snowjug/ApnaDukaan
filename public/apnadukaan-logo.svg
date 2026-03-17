@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="ApnaDukaan logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="56" fill="#0f172a"/>
+  <path d="M58 88c0-6 5-11 11-11h118c6 0 11 5 11 11v14c0 6-5 11-11 11H69c-6 0-11-5-11-11V88z" fill="url(#g)"/>
+  <path d="M78 113h100l-8 58c-1 7-7 12-14 12H100c-7 0-13-5-14-12l-8-58z" fill="#fff"/>
+  <circle cx="104" cy="196" r="11" fill="#f97316"/>
+  <circle cx="152" cy="196" r="11" fill="#e11d48"/>
+  <path d="M96 142l13-24h12l13 24h-11l-2-5h-12l-2 5H96zm17-14l-2 5h6l-2-5z" fill="#0f172a"/>
+  <path d="M142 118h10c8 0 14 6 14 14s-6 14-14 14h-10v-28zm10 20c3 0 5-2 5-6s-2-6-5-6h-1v12h1z" fill="#0f172a"/>
+</svg>
