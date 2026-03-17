@@ -1,294 +1,151 @@
-# ApnaDukaan Inventory Management System (IMS)
+# ApnaDukaan
 
-A modern, full‑featured **Inventory Management System** designed specifically for **Kirana / Grocery Stores**, built with **React, TypeScript, and Supabase**. This application provides end‑to‑end tools for managing products, inventory, sales, suppliers, customers, and store operations efficiently.
+Fast, modern inventory and retail operations platform for neighborhood stores.
 
----
+ApnaDukaan helps you run daily store workflows from one place: products, stock, sales, suppliers, customers, branches, reports, and audit trails.
 
-## 🚀 Features
+## Why This Project
 
-### Core Functionality
+Most small-store software is either too basic or too heavy.
+ApnaDukaan is built to be practical:
 
-* **Dashboard** – Real‑time overview of sales, stock status, and key business metrics
-* **Product Management** – Complete CRUD operations with SKU, barcode, category, batch, and expiry support
-* **Inventory Tracking** – Real‑time stock monitoring, stock adjustments, and low‑stock alerts
-* **Point of Sale (POS)** – Fast and intuitive billing interface with barcode scanning
-* **Sales Management** – Track daily sales, transactions, and payment methods
-* **Categories** – Organize products using structured categories
+- Fast POS and billing flows
+- Reliable stock visibility and movement tracking
+- Role-based control for teams
+- Supabase-backed data with secure access policies
+- Clean React UI that works across desktop and tablet sizes
 
-### Advanced Features
+## Core Modules
 
-* **Supplier Management** – Manage suppliers, purchase orders, and supplier pricing
-* **Customer Management** – Maintain customer profiles, purchase history, and custom pricing
-* **User Management** – Role‑based access control (Admin, Manager, Staff, Viewer)
-* **Audit Logs** – Full activity tracking for accountability and compliance
-* **Reports & Analytics** – Sales, inventory, and financial reports
-* **Stocktakes** – Physical inventory counting and reconciliation
-* **User Profiles** – Personalized preferences and settings
+- Dashboard: KPIs, trends, low-stock signals, recent activity
+- POS: product search, barcode input, cart, checkout, receipt generation
+- Inventory: stock movements, stocktakes, expiry and reorder visibility
+- Products & Categories: structured catalog management with pricing
+- Sales: transaction records and sales views
+- Suppliers: purchase orders and supplier-product relationships
+- Customers: customer history and custom pricing flows
+- Branches: multi-branch inventory transfer and branch-level views
+- User Management: role-based access and profile management
+- Reports: sales and performance snapshots for decision-making
+- Audit Logs: action history for accountability and debugging
 
-### Technical Features
+## Tech Stack
 
-* **Authentication** – Secure authentication using Supabase Auth
-* **Row Level Security (RLS)** – Database‑level security enforcement
-* **Real‑time Updates** – Live synchronization across users
-* **Responsive Design** – Optimized for desktop, tablet, and mobile
-* **Dark Mode** – Theme customization
-* **Barcode Support** – Integrated barcode and QR code scanning
+- Frontend: React 18, TypeScript, Vite
+- State/Data: Redux Toolkit, TanStack Query
+- UI: Tailwind CSS, shadcn/ui, Radix UI
+- Backend: Supabase (PostgreSQL, Auth, RLS, Realtime)
+- Validation/Forms: Zod, React Hook Form
+- Charts/Utilities: Recharts, date-fns, html5-qrcode
 
----
+## Quick Start
 
-## 🛠️ Technology Stack
+### 1. Prerequisites
 
-### Frontend
+- Node.js 18+
+- npm (or bun)
+- A Supabase project
 
-* **React 18** – Modern component‑based UI
-* **TypeScript** – Strong type safety
-* **Vite** – Fast development and build tooling
-* **React Router** – Client‑side routing
-* **Redux Toolkit** – Global state management
-* **TanStack Query** – Server‑state synchronization
-* **Tailwind CSS** – Utility‑first styling
-* **shadcn/ui** – Pre‑built, accessible UI components
-* **Radix UI** – Headless, accessible primitives
+### 2. Install Dependencies
 
-### Backend
+```bash
+npm install
+```
 
-* **Supabase (BaaS)**
+### 3. Configure Environment
 
-  * PostgreSQL database
-  * Authentication
-  * Row Level Security (RLS)
-  * Real‑time subscriptions
-  * File storage
+Create a `.env` file (or copy from `.env.example`) and set:
 
-### Key Libraries
+```env
+VITE_SUPABASE_PROJECT_ID=your-project-id
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
+```
 
-* **React Hook Form** – Form handling and validation
-* **Zod** – Schema‑based validation
-* **Recharts** – Data visualization
-* **Lucide React** – Icon library
-* **date‑fns** – Date utilities
-* **html5‑qrcode** – Barcode / QR scanning
-* **jspdf‑autotable** – PDF report generation
+### 4. Apply Database Migrations
 
----
+Run SQL files from `supabase/migrations` in order using Supabase SQL Editor.
 
-## 📋 Prerequisites
-
-* **Node.js** – v18 or higher
-* **npm** or **bun** – Package manager
-* **Supabase Account** – Backend services
-
----
-
-## 🔧 Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone <repository-url>
-   cd kirana-store-ims
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   # or
-   bun install
-   ```
-
-3. **Configure environment variables**
-
-   Copy the example file:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-   Update with your Supabase credentials:
-
-   ```env
-   VITE_SUPABASE_PROJECT_ID=your-project-id
-   VITE_SUPABASE_URL=your-supabase-url
-   VITE_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
-   ```
-
-4. **Set up Supabase**
-
-   * Open your Supabase dashboard
-   * Navigate to **SQL Editor**
-   * Run all migration files from `supabase/migrations` in chronological order
-
----
-
-## 🚀 Running the Application
-
-### Development Mode
+### 5. Start Development Server
 
 ```bash
 npm run dev
-# or
-bun run dev
 ```
 
-Application runs at:
+### 6. Default Credentials
 
-```
-http://localhost:5173
-```
+- Email: admin@gmail.com
+- Password: admin123
 
-### Production Build
+Vite may auto-pick the next free port.
+If `3000` is busy, it can move to `3001`, `3002`, etc.
+
+## Scripts
 
 ```bash
-npm run build
+npm run dev        # Start Vite dev server
+npm run build      # Production build
+npm run build:dev  # Development-mode build
+npm run preview    # Preview production build
+npm run lint       # Run ESLint
 ```
 
-### Preview Build
+## Project Structure
+
+```text
+src/
+  components/      Reusable UI and domain components
+  hooks/           Data and behavior hooks
+  integrations/    External integrations (Supabase)
+  lib/             Utilities
+  pages/           Route-level pages
+  store/           Redux store and slices
+supabase/
+  migrations/      SQL schema and policy migrations
+public/            Static assets
+```
+
+## Security & Access
+
+- Supabase Auth for identity
+- Protected routes in the frontend
+- Row Level Security (RLS) in database
+- Role-based feature access (Admin, Manager, Staff, Viewer)
+
+## Troubleshooting
+
+### App not opening locally
+
+- Start server with:
 
 ```bash
-npm run preview
+npm run dev
 ```
 
----
-
-## 📁 Project Structure
-
-```
-kirana-store-ims/
-├── public/              # Static assets
-├── src/
-│   ├── components/      # Reusable components
-│   │   ├── ui/         # shadcn/ui components
-│   │   └── layout/     # Layout components
-│   ├── hooks/          # Custom hooks
-│   ├── integrations/   # External integrations
-│   ├── lib/            # Utilities and helpers
-│   ├── pages/          # Page‑level components
-│   ├── store/          # Redux store and slices
-│   ├── App.tsx         # Root component
-│   └── main.tsx        # Entry point
-├── supabase/
-│   └── migrations/     # Database migrations
-├── .env.example
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-└── vite.config.ts
-```
-
----
-
-## 🗄️ Database Schema (Key Tables)
-
-* **categories** – Product categorization
-* **products** – Product catalog and pricing
-* **stock_movements** – Inventory tracking
-* **sales**, **sale_items** – Sales transactions
-* **suppliers**, **supplier_products** – Supplier data
-* **purchase_orders**, **purchase_order_items** – Procurement
-* **customers**, **customer_pricing** – Customer management
-* **profiles**, **user_roles** – User access control
-* **stocktakes**, **stocktake_items** – Physical stock audits
-* **audit_logs** – System activity logs
-
----
-
-## 👥 User Roles
-
-1. **Admin** – Full system control
-2. **Manager** – Operational and reporting access
-3. **Staff** – POS and inventory operations
-4. **Viewer** – Read‑only access
-
----
-
-## 🔐 Authentication & Security
-
-* Supabase Email / Password authentication
-* Protected routes
-* Secure session handling
-* Database‑level Row Level Security (RLS)
-
----
-
-## 📱 Key Modules
-
-### Dashboard
-
-* Sales overview
-* Low‑stock alerts
-* Recent transactions
-* KPIs
-
-### Products & Inventory
-
-* Product CRUD
-* Batch & expiry tracking
-* Stock adjustments
-* Movement history
-
-### POS (Billing)
-
-* Barcode scanning
-* Fast checkout
-* Multiple payment methods
-* Receipt generation
-
-### Reports
-
-* Sales reports
-* Inventory valuation
-* Financial summaries
-* Export to PDF
-
-### Suppliers & Customers
-
-* Supplier management
-* Purchase orders
-* Customer history
-* Custom pricing
-
----
-
-## 🧪 Code Quality
-
-* ESLint for linting
-* TypeScript strict typing
-* Consistent formatting
+- Open the exact URL printed in terminal (for example `http://localhost:3004/`).
+- If dependencies are broken on Windows:
 
 ```bash
-npm run lint
+Remove-Item -Recurse -Force node_modules
+Remove-Item -Force package-lock.json
+npm install
 ```
 
----
+### Port already in use
 
-## 📝 License
+Stop old dev servers or run on a fixed port:
 
-This project is **private and proprietary**. Unauthorized use or distribution is prohibited.
+```bash
+npm run dev -- --host --port 3004
+```
+
+## Deployment
+
+This project is compatible with Vercel and Netlify configurations included in the repository.
+
+## License
+
+Private and proprietary.
+Unauthorized use or distribution is prohibited.
 
 Copyright Atharv.
-
----
-
-## 🔄 Recent Updates
-
-* Added batch and expiry tracking
-* Improved stocktake workflow
-* Enhanced audit logging
-* User profile management
-* Simplified to **single ApnaDukaan system**
-
----
-
-## 🚧 Roadmap
-
-* Advanced analytics dashboard
-* Mobile application
-* Barcode label printing
-* Accounting software integration
-* Multi‑currency support
-* Advanced reporting
-
----
-
-**ApnaDukaan IMS** – Built with React, TypeScript, and Supabase for modern retail management.
